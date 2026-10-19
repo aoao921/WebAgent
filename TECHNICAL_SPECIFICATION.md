@@ -66,10 +66,12 @@ Ruff, pip check, wheel and source distribution builds passed. npm audit reports
 zero known vulnerabilities after compatible dependency updates. A source allowlist
 scan found no production host, private user path, private key or token patterns.
 
-The release is prepared for the public aoao921/WebAgent repository with MIT license,
-Chinese/English quick starts, an offline demo and GitHub Actions for Python, real
-Chromium, Docker, lint, dependency audit and package builds. GitHub CI execution
-will be verified after pushing the initial independent history.
+Published to the public https://github.com/aoao921/WebAgent repository with MIT
+license, Chinese/English quick starts and an offline demo. The initial independent
+commit is `b69dfe47fb18e3ce9941024479be363c4ee40251`. GitHub Actions run
+https://github.com/aoao921/WebAgent/actions/runs/39197659990 passed all Python,
+real Chromium, Docker, lint, dependency audit and package build steps. The public
+repository was checked without authentication and has main as its default branch.
 
 ## 6. Current limitations
 

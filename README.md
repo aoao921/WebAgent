@@ -1,5 +1,7 @@
 # WebAgent
 
+[![CI](https://github.com/aoao921/WebAgent/actions/workflows/ci.yml/badge.svg)](https://github.com/aoao921/WebAgent/actions/workflows/ci.yml)
+
 A lightweight web agent extracted from AIPentest. Give it a goal and a URL; the
 model observes semantic browser snapshots, chooses actions, inspects results, and
 continues until it can answer or explain a blocker.
