@@ -1,0 +1,35 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: browser/package-lock.json
+      - run: python -m pip install -e '.[dev]'
+      - run: npm ci
+        working-directory: browser
+      - run: npx playwright install --with-deps chromium
+        working-directory: browser
+      - run: python -m ruff check src tests
+      - run: docker pull python:3.12-slim
+      - run: python -m pytest -q
+        env:
+          WEBAGENT_BROWSER_TEST: '1'
+          WEBAGENT_DOCKER_TEST: '1'
+      - run: npm test
+        working-directory: browser
+      - run: npm audit --omit=dev
+        working-directory: browser
+      - run: python -m build

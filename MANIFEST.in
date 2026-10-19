@@ -1,0 +1,6 @@
+include LICENSE NOTICE README.md README.zh-CN.md TECHNICAL_SPECIFICATION.md .env.example
+recursive-include browser/src *.js
+recursive-include browser/tests *.js
+include browser/package.json browser/package-lock.json
+recursive-include tests *.py
+global-exclude *.pyc

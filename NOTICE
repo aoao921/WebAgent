@@ -1,0 +1,13 @@
+WebAgent
+Copyright (c) 2026 aoao921
+
+The generic Python agent runtime and JavaScript semantic snapshot engine were
+extracted and adapted from AIPentest, authored by aoao921:
+https://github.com/aoao921/AIPentest
+Source revision: f6baaa5228023db975e224143314e8292392737b
+
+WebAgent is an independent source release. No private AIPentest Git history,
+deployment configuration, model credentials or task records are included.
+
+Dependencies are distributed under their respective licenses. In particular,
+Playwright and the Model Context Protocol SDK are not relicensed by this project.

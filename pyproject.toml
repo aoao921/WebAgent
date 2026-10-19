@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webagent-runtime"
+version = "0.1.0"
+description = "A lightweight, auditable web agent with semantic browser automation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "aoao921"}]
+dependencies = ["openai>=1.60,<3", "pydantic>=2.10,<3", "mcp>=1.30,<2", "httpx>=0.28,<1", "python-dotenv>=1,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "build>=1,<2", "ruff>=0.9,<1"]
+
+[project.scripts]
+webagent = "webagent.cli:main"
+
+[project.urls]
+Repository = "https://github.com/aoao921/WebAgent"
+Issues = "https://github.com/aoao921/WebAgent/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: real browser or Docker integration"]
+
+[tool.ruff.lint]
+select = ["F"]
